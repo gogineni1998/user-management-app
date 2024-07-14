@@ -1,0 +1,59 @@
+<div>
+  <div>
+    <h1 style="text-align: center; padding: 10px; padding-top: 50px;">User Management System</h1>
+  </div>
+  <div class="center-container">
+    <div class="container m-5 p-5">
+      <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile>
+          <div class="example-button-row">
+            <button mat-stroked-button routerLink="/create">Create a User</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-row">
+            <button mat-stroked-button routerLink="/delete">Delete a User</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-row">
+            <button mat-stroked-button routerLink="/edit">Update a User</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-row">
+            <button mat-stroked-button routerLink="/view">View all Users</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-row">
+            <button mat-fab aria-label="Example icon button with a create icon" routerLink="/create">
+              <mat-icon>create</mat-icon>
+            </button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-container">
+            <button mat-fab aria-label="Example icon button with a delete icon" routerLink="/delete">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-container" routerLink="/edit">
+            <button mat-fab aria-label="Example icon button with an update icon">
+              <mat-icon>update</mat-icon>
+            </button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="example-button-container">
+            <button mat-fab aria-label="Example icon button with a view icon" routerLink="/view">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>

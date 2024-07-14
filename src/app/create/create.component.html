@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <h1 style="text-align: center; padding: 10px; padding-top: 50px;">Enter User Details</h1>
+    </div>
+        <form #userForm="ngForm" (ngSubmit)="createUser(userForm)">
+            <div class="container">
+                <mat-form-field appearance="outline" class="wide-form-field">
+                  <mat-label>User Name</mat-label>
+                  <input matInput placeholder="ex: dheeraj98" [(ngModel)]="user.username" name="username">
+                </mat-form-field>
+            </div>
+            <div class="container">
+                <mat-form-field appearance="outline" class="wide-form-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="ex: goginenidheeraj@gmail.com" [(ngModel)]="user.email" name="email">
+                  </mat-form-field>
+            </div>
+            <div class="container">
+                <mat-form-field appearance="outline" class="wide-form-field">
+                    <mat-label>Summary</mat-label>
+                    <input matInput placeholder="ex: describe about yourself" [(ngModel)]="user.summary" name="summary">
+                  </mat-form-field>
+            </div>
+            <div class="container">
+                <div class="example-button-row">
+                    <button mat-raised-button>Submit</button>
+                  </div>
+            </div>
+        </form>
+</div>
