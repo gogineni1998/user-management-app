@@ -16,7 +16,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { ViewComponent } from './view/view.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 
@@ -43,6 +43,7 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     HttpClientModule,
     MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

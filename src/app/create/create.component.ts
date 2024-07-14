@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
-import { NgForm } from '@angular/forms';
-import { CreateService } from '../create.service';
+import { NgForm, NgModel } from '@angular/forms';
+import { CreateService } from '../user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -35,29 +35,35 @@ export class CreateComponent implements OnInit {
   }
 
   createUser(userForm: NgForm): void {
-    if (this.isCreateUser) {
-      this.createService.createUser(this.user).subscribe(
-        {
-          next: (res: Object) => {
-            this.router.navigate(['/view'])
-          },
-          error: (err: HttpErrorResponse) => {
-            console.log(err);
+    if (userForm.valid) {
+      if (this.isCreateUser) {
+        this.createService.createUser(this.user).subscribe(
+          {
+            next: (res: Object) => {
+              this.router.navigate(['/view'])
+            },
+            error: (err: HttpErrorResponse) => {
+              console.log(err);
+            }
           }
-        }
-      )
-    } else {
-      this.createService.updateUser(this.user).subscribe(
-        {
-          next: (res: Object) => {
-            this.router.navigate(['/view'])
-          },
-          error: (err: HttpErrorResponse) => {
-            console.log(err);
-        }
+        )
+      } else {
+        this.createService.updateUser(this.user).subscribe(
+          {
+            next: (res: Object) => {
+              this.router.navigate(['/view'])
+            },
+            error: (err: HttpErrorResponse) => {
+              console.log(err);
+            }
+          }
+        )
       }
-      )
     }
+  }
+
+  getFormControl(form: NgForm, controlName: string): NgModel {
+    return form.controls[controlName] as unknown as NgModel;
   }
 
 }

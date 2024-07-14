@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateService } from '../create.service';
+import { CreateService } from '../user.service';
 import { User } from '../user.model';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -34,7 +34,7 @@ export class DeleteComponent implements OnInit {
       }
       deleteUser(userId: string) {
         console.log(userId);
-        this.createService.deleteEmployee(userId).subscribe(
+        this.createService.deleteUser(userId).subscribe(
           {
             next: (res) => {
               this.getUsers();

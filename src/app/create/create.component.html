@@ -1,30 +1,42 @@
 <div>
     <div>
-        <h1 style="text-align: center; padding: 10px; padding-top: 50px;">Enter User Details</h1>
+      <h1 style="text-align: center; padding: 10px; padding-top: 50px;">Enter User Details</h1>
     </div>
-        <form #userForm="ngForm" (ngSubmit)="createUser(userForm)">
-            <div class="container">
-                <mat-form-field appearance="outline" class="wide-form-field">
-                  <mat-label>User Name</mat-label>
-                  <input matInput placeholder="ex: dheeraj98" [(ngModel)]="user.username" name="username">
-                </mat-form-field>
-            </div>
-            <div class="container">
-                <mat-form-field appearance="outline" class="wide-form-field">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="ex: goginenidheeraj@gmail.com" [(ngModel)]="user.email" name="email">
-                  </mat-form-field>
-            </div>
-            <div class="container">
-                <mat-form-field appearance="outline" class="wide-form-field">
-                    <mat-label>Summary</mat-label>
-                    <input matInput placeholder="ex: describe about yourself" [(ngModel)]="user.summary" name="summary">
-                  </mat-form-field>
-            </div>
-            <div class="container">
-                <div class="example-button-row">
-                    <button mat-raised-button>Submit</button>
-                  </div>
-            </div>
-        </form>
-</div>
+    <form #userForm="ngForm" (ngSubmit)="createUser(userForm)">
+      <div class="container">
+        <mat-form-field appearance="outline" class="wide-form-field">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="ex: dheeraj98" [(ngModel)]="user.username" name="username" required minlength="3">
+          <mat-error *ngIf="getFormControl(userForm, 'username')?.invalid && (getFormControl(userForm, 'username')?.dirty || getFormControl(userForm, 'username')?.touched)">
+            <span *ngIf="getFormControl(userForm, 'username')?.errors?.['required']">Username is required</span>
+            <span *ngIf="getFormControl(userForm, 'username')?.errors?.['minlength']">Username must be at least 3 characters long</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field appearance="outline" class="wide-form-field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="ex: goginenidheeraj@gmail.com" [(ngModel)]="user.email" name="email" required email>
+          <mat-error *ngIf="getFormControl(userForm, 'email')?.invalid && (getFormControl(userForm, 'email')?.dirty || getFormControl(userForm, 'email')?.touched)">
+            <span *ngIf="getFormControl(userForm, 'email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="getFormControl(userForm, 'email')?.errors?.['email']">Please enter a valid email</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field appearance="outline" class="wide-form-field">
+          <mat-label>Summary</mat-label>
+          <input matInput placeholder="ex: describe about yourself" [(ngModel)]="user.summary" name="summary" required>
+          <mat-error *ngIf="getFormControl(userForm, 'summary')?.invalid && (getFormControl(userForm, 'summary')?.dirty || getFormControl(userForm, 'summary')?.touched)">
+            <span *ngIf="getFormControl(userForm, 'summary')?.errors?.['required']">Summary is required</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <div class="example-button-row">
+          <button mat-raised-button [disabled]="userForm.invalid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

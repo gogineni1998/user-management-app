@@ -1,11 +1,10 @@
-
-  .container {
-    text-align: center;
-    width: 80%;
+.container {
+  text-align: center;
+  width: 80%;
   margin: 0 auto;
-    display: block;
-  }
+  display: block;
+}
 
-  .wide-form-field {
-    width: 100%;
-  }
+.wide-form-field {
+  width: 100%;
+}

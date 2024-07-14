@@ -29,7 +29,7 @@ export class CreateService {
   /**
    * deleteEmployee
 userId: string   */
-  public deleteEmployee(userId: string) {
+  public deleteUser(userId: string) {
     return this.httpClient.delete(`${this.api}/users/${userId}`)
   }
 
