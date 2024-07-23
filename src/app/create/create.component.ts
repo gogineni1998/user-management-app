@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
         this.createService.createUser(this.user).subscribe(
           {
             next: (res: Object) => {
-              this.router.navigate(['/view'])
+              this.router.navigate(['/'])
             },
             error: (err: HttpErrorResponse) => {
               console.log(err);
@@ -51,7 +51,7 @@ export class CreateComponent implements OnInit {
         this.createService.updateUser(this.user).subscribe(
           {
             next: (res: Object) => {
-              this.router.navigate(['/view'])
+              this.router.navigate(['/'])
             },
             error: (err: HttpErrorResponse) => {
               console.log(err);

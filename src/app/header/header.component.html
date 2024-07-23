@@ -1,5 +1,7 @@
-<mat-toolbar color="primary">
-  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" (click)="getHome()" style="cursor: pointer;"></mat-icon>
-
-  </mat-toolbar>
-  
+<mat-toolbar color="primary" class="toolbar">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" (click)="getHome()" class="home-icon"></mat-icon>
+  <span class="spacer"></span>
+  <div class="example-button-row">
+    <button mat-stroked-button routerLink="/create" class="create-button">Create a User</button>
+  </div>
+</mat-toolbar>
